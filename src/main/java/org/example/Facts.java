@@ -4,12 +4,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 public class Facts {
-    private String id;
-    private String text;
-    private String type;
-    private String user;
+    @JsonProperty("id") private String id;
+    @JsonProperty("text") private String text;
+    @JsonProperty("type") private String type;
+    @JsonProperty("user") private String user;
 
-    private String upvotes;
+    @JsonProperty("upvotes") private Integer upvotes;
 
     @Override
     public String toString() {
@@ -54,11 +54,11 @@ public class Facts {
         this.user = user;
     }
 
-    public String getUpvotes() {
+    public Integer getUpvotes() {
         return upvotes;
     }
 
-    public void setUpvotes(String upvotes) {
+    public void setUpvotes(Integer upvotes) {
         this.upvotes = upvotes;
     }
 }

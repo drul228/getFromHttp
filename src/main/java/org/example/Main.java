@@ -27,7 +27,7 @@ public class Main {
             List<Facts> factsList = objectMapper.readValue(response.getEntity().getContent(), new TypeReference<List<Facts>>() {
             });
             factsList.stream()
-                    .filter(x -> x.getUpvotes() != null)
+                    .filter(x -> x.getUpvotes() != null && x.getUpvotes() >= 0)
                     .forEach(System.out::println);
 
 
